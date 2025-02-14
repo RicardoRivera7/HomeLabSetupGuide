@@ -32,7 +32,7 @@ A guide to show how to start a homelab utilzing your prefered OS and adding an I
 
 
 
-<h2>Setup Walk-through:</h2>
+<h2>Linux/Windows Machine Setup:</h2>
 
 <p align="left">
 Download Virtual box and an ISO of your choice <br/> 
@@ -83,44 +83,47 @@ Wait for the installation process to complete then login with the admin name and
 <img src="https://i.imgur.com/1tYim7v.png" height="80%" width="80%" alt="Firewall Steps"/>
 <br />
 <br />
-Start the Virtual Machine and start the installation <br/>
-<img src="https://i.imgur.com/BmDRGKu.png" height="80%" width="80%" alt="Firewall Steps"/>
+When prompted for which installation you want, choose the EVAL one <br/>
+Select the Standard Option for the node (if you get an error saying you need more NICs just add another adpater to the machine in the network tab) <br/>
+Enter Any Hostname you would like for the device or leave it at default <br/>
+<img src="https://i.imgur.com/v52nmHP.png" height="80%" width="80%" alt="Firewall Steps"/>
 <br />
 <br />
-Choose all the default options and make sure you select the checkbox for the ZFS Configuration section:  <br/>
-<img src="https://i.imgur.com/VZVpugG.png" height="80%" width="80%" alt="Firewall Steps"/>
+Choose whichever adapter you would like to use as your management or main one <br/>
+Select a static IP so that you can manage it easier <br/>
+Enter an IP that you would like, or if you already have a firewall setup then choose an IP thats within the LANs domain (EX: LAN = 192.168.1.1/24 then SecurityOnion = 192.168.1.2/24) <br/>
+<img src="https://i.imgur.com/LGefq8P.png" height="80%" width="80%" alt="Firewall Steps"/>
 <br />
 <br />
-Select Yes for the next option and wait until installation is complete, once you get the complete box you must unmount the ISO or it will cycle through the boot process again:  <br/>
-At the top bar of the Virtualbox go to Devices -> Optical Drives -> select your pfsense ISO -> Click Force Unmount <br/>
-Click Reboot <br/>
-<img src="https://i.imgur.com/io57SG0.png" height="80%" width="80%" alt="Firewall Steps"/>
+In the next step enter the IP that gives you access to the internet or firewall (EX: 192.168.1.1)  <br/>
+For the DNS servers enter this: 8.8.8.8,8.8.4.4 <br/>
+If you encounter an error on the next step about the IP being routed then go to your network tab and change the second adapter to be enabled be not attached <br/>
+Select Direct <br/
+<img src="https://i.imgur.com/jHl1PgF.png" height="80%" width="80%" alt="Firewall Steps"/>
+<br />
+<img src="https://i.imgur.com/kAZ92rm.png" height="80%" width="80%" alt="Firewall Steps"/>
 <br />
 <br />
-Create and install another virtual machine for Linux or Windows whichever you prefer (I used Linux)  <br/>
-Edit the adapter 1 to be Attached to Internal Network and launch the new VM <br/>
-Open the command line and type ifconfig (linux) or ipconfig (windows) <br/>
-Check to see that the inet ip matches your LAN ip thats on PFsense 
-<img src="https://i.imgur.com/9rRPKPU.png" height="80%" width="80%" alt="Firewall Steps"/>
+When prompted to enter an email note that this does not have to be a vaild email address. Make anything up (example: analyst@acme.com)  <br/>
+Enter any password <br/>
+<img src="https://i.imgur.com/l0Oa74S.png" height="80%" width="80%" alt="Firewall Steps"/> 
 <br/>
-<img src="https://i.imgur.com/GA4Rpbg.png" height="80%" width="80%" alt="Firewall Steps"/>
+<br/>
+Here we will choose to access the web interface via IP but you can choose any of the other options if those suit you more <br/>
+Click Yes <br/>
+Enter the IP or subnet that allows you online (EX: 192.168.1.1/24) <br/>
+<img src="https://i.imgur.com/aerxhEy.png" height="80%" width="80%" alt="Firewall Steps"/> 
 <br/>
 <br/>
-You can try to ping the LAN ip in the command line to see if you get a response back <br/>
+If you want to allow SOC Telemetry just so that it helps their analytics click yes, this wont affect you so this one is completely optional if you want it on (I clicked yes) <br/>
 <img src="https://i.imgur.com/u3qFSN0.png" height="80%" width="80%" alt="Firewall Steps"/>
 <br/>
 <br/>
 Open a web browser and type in the LAN ip, you will get a warning since there is no certificate, you can just ignore that an advance <br/>
-<img src="https://i.imgur.com/AP54rb3.png" height="80%" width="80%" alt="Firewall Steps"/> 
-<br/>
-<br/>
-Login using the default credentials all lowercase for the username and password: <br/> 
-Username is admin <br/>
-Password is pfsense <br/>
-<img src="https://i.imgur.com/nhHiR0V.png" height="80%" width="80%" alt="Firewall Steps"/>  
-<br/>
-<br/>
-Go through the installation wizard and then you have your firewall all setup using pfsense!
+This is the final box, if everything looks right to you click yes and it will finish the installation <br/>
+And don't worry if it seems like its stuck or taking awhile, leave it be and it should show progress in about 5 minutes <br/>
+<img src="https://i.imgur.com/4YmWnKY.pngg" height="80%" width="80%" alt="Firewall Steps"/> 
+
 
   
 </p>

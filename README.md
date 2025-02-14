@@ -116,8 +116,6 @@ Enter the IP or subnet that allows you online (EX: 192.168.1.1/24) <br/>
 <br/>
 <br/>
 If you want to allow SOC Telemetry just so that it helps their analytics click yes, this wont affect you so this one is completely optional if you want it on (I clicked yes) <br/>
-<img src="https://i.imgur.com/u3qFSN0.png" height="80%" width="80%" alt="Firewall Steps"/>
-<br/>
 <br/>
 Open a web browser and type in the LAN ip, you will get a warning since there is no certificate, you can just ignore that an advance <br/>
 This is the final box, if everything looks right to you click yes and it will finish the installation <br/>
